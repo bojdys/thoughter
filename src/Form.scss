@@ -1,0 +1,61 @@
+@import "variables";
+
+.form{
+  display: flex;
+  margin: {
+    top: 5px;
+    left: 30px;
+    right: 30px;
+  }
+}
+
+.inputs{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
+input {
+  border-radius: $radius-standard;
+  width: 100%;
+  font-size: 16px;
+}
+
+.authorInput{
+  width: 200px;
+  margin-left: 10px;
+}
+
+.hopButton{
+  @include border();
+  display: flex;
+  background-color: $burgundy;
+  color: white;
+  text-align: center;
+  width: 100px;
+  margin-left: 10px;
+  &:hover{ 
+    cursor: pointer;
+    border: $border-hovered;
+  }
+}
+
+.flash{
+  color: $blue;
+}
+
+@media only screen and (max-width: 630px) {
+    
+  .inputs{
+    flex-direction: column;
+  }
+
+  .authorInput{
+    width: 100%;
+    margin:{
+      top: 5px;
+      left: 0px;
+    }
+  }
+
+}

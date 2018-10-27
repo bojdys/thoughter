@@ -1,0 +1,21 @@
+$light-grey: hsl(0, 0%, 95%);
+$dark-grey: hsl(0, 0%, 70%);
+$light-black: hsl(0, 0%, 40%);
+$blue: hsla(194, 100%, 56%, 1);
+$burgundy: hsla(345.1, 100%, 40.2%, 0.8);
+
+$radius-standard: 5px;
+$border-standard: 1px solid $dark-grey;
+$border-hovered: 1px solid $light-black;
+$border-blue: 1px solid $blue;
+
+$element-shadow: 0 4px 8px 3px rgba(0, 0, 0, 0.07), 0 6px 20px 5px rgba(0, 0, 0, 0.05);
+$background: "background.jpg";
+
+$shadesTotal: 10; 
+$shadeStep: 0.1;
+
+@mixin border() {
+    border: $border-standard;
+    border-radius: $radius-standard;
+}

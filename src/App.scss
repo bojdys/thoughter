@@ -1,0 +1,49 @@
+@import "variables";
+
+html {
+  background: url($background);
+  background-size: cover;
+}
+
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: $blue;
+  height: 120px;
+}
+
+.title {
+  font: {
+    size: 3em;
+    weight: 400;
+  }
+}
+
+.elements{
+  display: flex;
+  flex-direction: column;
+  margin: 0px auto;
+  width: 100%;
+  max-width: 750px;
+}
+
+@media only screen and (max-width: 630px) {
+ 
+  .elements{
+    width: 350px;
+  }
+
+  .inputs{
+    flex-direction: column;
+  }
+
+  .authorInput{
+    width: 100%;
+    margin:{
+      top: 5px;
+      left: 0px;
+    }
+  }
+  
+}

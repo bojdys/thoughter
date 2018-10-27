@@ -1,0 +1,115 @@
+@import "../variables";
+
+.board{
+  @include border();
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  box-shadow: $element-shadow;
+  height: 300px;
+  margin: 30px 30px;
+}
+
+.entries{
+  overflow: scroll;
+  height: 100%;
+}
+
+.entry{
+  display: flex;
+  @for $i from 1 through $shadesTotal {
+    &:nth-of-type(#{$shadesTotal}n+#{$i}) {
+      background: fade-out($blue, $shadeStep * $i);
+    }
+  }
+}
+
+%entryPart{
+  padding: 5px 5px;
+}
+
+.content{ 
+  @extend %entryPart;
+  text-align: left;
+  overflow: scroll;
+  width: 100%;
+}
+
+.specs{
+  @extend %entryPart;
+  display: flex;
+  background-color: $light-grey;
+  width: 530px;
+}
+
+.author{
+  white-space: nowrap;
+  width: 100%;
+}
+
+.date{
+  min-width: 90px;
+}
+
+.likes{
+  text-align: center;
+  min-width: 50px;
+}
+
+.likeButton{
+  min-width: 20px;
+  padding-right: 5px;
+  &:hover{ 
+    cursor: pointer;
+  }
+}
+
+.headline{
+  display: flex;
+  border-bottom: $border-standard;
+  padding: 5px 5px;
+}
+
+.boardTitle{
+  text-align: left;
+  width: 100%;
+  padding-left: 5px;
+}
+
+.sortBy{
+  min-width: 68px;
+}
+
+.sortButton{
+  @include border();
+  text-align: center;
+  width: 58px;
+  margin-left: 5px;
+  &:hover{ 
+    cursor: pointer;
+    border: $border-hovered;
+  }
+}
+
+.sortButtonClicked{
+  @extend .sortButton;
+  background-color: $blue;
+  border: $border-blue;
+  color: white;
+  &:hover{ 
+    cursor: default;
+    border: $border-blue;
+  }
+}
+
+@media only screen and (max-width: 630px) {
+
+  .entry{
+    flex-direction: column;
+  }
+
+  .specs{
+    width: 100%;
+  }
+
+}
